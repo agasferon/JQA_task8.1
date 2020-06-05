@@ -58,24 +58,10 @@ class ConditionerTest {
     }
 
     @Test
-    public void increaseCurrentTemperature(){
-        int newCurrentTemperature = conditioner.getCurrentTemperature() + 1;
-        conditioner.setCurrentTemperature(newCurrentTemperature);
-        System.out.println("Current temperature = " + conditioner.getCurrentTemperature());
-    }
-
-    @Test
-    public void decreaseCurrentTemperature(){
-        int newCurrentTemperature = conditioner.getCurrentTemperature() - 1;
-        conditioner.setCurrentTemperature(newCurrentTemperature);
-        System.out.println("Current temperature = " + conditioner.getCurrentTemperature());
-    }
-
-    @Test
     public void shouldRaiseTemperatureNoHigherThanMaximum(){
         System.out.println("Started method shouldRaiseTemperatureNoHigherThanMaximum()");
         for (int i = conditioner.getCurrentTemperature(); i < (conditioner.getMaxTemperature() + 3); i++){
-            increaseCurrentTemperature();
+            conditioner.increaseCurrentTemperature();
         }
     }
 
@@ -83,7 +69,7 @@ class ConditionerTest {
     public void shouldLowerTemperatureNoLowerThanMinimum(){
         System.out.println("Started method shouldLowerTemperatureNoLowerThanMinimum()");
         for (int i = conditioner.getCurrentTemperature(); i > (conditioner.getMinTemperature() - 3); i--) {
-            decreaseCurrentTemperature();
+            conditioner.decreaseCurrentTemperature();
         }
     }
 

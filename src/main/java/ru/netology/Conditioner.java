@@ -52,4 +52,23 @@ public class Conditioner {
     public void setOn(boolean on) {
         this.on = on;
     }
+
+    public void increaseCurrentTemperature() {
+        if (currentTemperature == maxTemperature) {
+            System.out.println("Current temperature = " + currentTemperature);
+            return;
+        }
+        currentTemperature++;
+        System.out.println("Current temperature = " + currentTemperature);
+    }
+
+    public void decreaseCurrentTemperature() {
+        if (currentTemperature == minTemperature) {
+            System.out.println("Current temperature = " + currentTemperature);
+            return;
+        }
+        currentTemperature--;
+        System.out.println("Current temperature = " + currentTemperature);
+    }
+
 }
